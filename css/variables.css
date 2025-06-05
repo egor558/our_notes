@@ -1,0 +1,33 @@
+:root {
+    /* Новая теплая цветовая палитра */
+    --color-primary: #E07A5F;  /* Терракотовый */
+    --color-primary-dark: #C56A4F;
+    --color-secondary: #3D405B;  /* Глубокий синий для контраста */
+    --color-accent: #F2CC8F;  /* Теплый песочный */
+    --color-accent-light: #F8EDE3;  /* Светлый кремовый */
+    --color-light: #F9F5F0;  /* Очень светлый теплый белый */
+    --color-dark: #3A3335;  /* Теплый почти черный */
+    --color-gray: #A68A64;  /* Теплый серо-коричневый */
+    --color-white: #FFFFFF;
+    
+    /* Дополнительные теплые акценты */
+    --color-warm-1: #D4A59A;  /* Светло-розовый */
+    --color-warm-2: #EDC7B7;  /* Очень светлый розовый */
+    --color-warm-3: #AC7B7D;  /* Пыльно-розовый */
+    
+    /* Остальные переменные остаются без изменений */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}

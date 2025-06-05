@@ -1,0 +1,516 @@
+/* Основные стили для страницы дневника */
+.diary-section {
+    padding: var(--space-xxl) 0;
+}
+
+.description {
+    max-width: 800px;
+    margin: 0 auto var(--space-xxl);
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    line-height: 1.8;
+}
+
+.diary-posts {
+    display: grid;
+    gap: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.diary-post {
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+}
+
+.post-title {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.post-date {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: var(--space-md);
+}
+
+.post-content {
+    margin-bottom: var(--space-md);
+}
+
+.post-media {
+    margin: var(--space-md) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.post-media img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.post-media video {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    max-height: 300px;
+}
+
+.post-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.post-action {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    padding: var(--space-xs) 0;
+}
+
+.post-action:hover {
+    text-decoration: underline;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-gray);
+    padding: var(--space-xxl) 0;
+}
+/* Дополнительные стили для медиа */
+.media-info {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    margin-top: 5px;
+    word-break: break-all;
+}
+
+.video-placeholder {
+    position: relative;
+}
+
+.video-placeholder img {
+    opacity: 0.7;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Стили для сетки медиа */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Уменьшили с 250px */
+    gap: 15px; /* Уменьшили с 20px */
+    margin: 15px 0; /* Уменьшили с 25px */
+}
+
+.media-card {
+    border-radius: 8px; /* Уменьшили с 10px */
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Облегчили тень */
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+}
+
+.media-card img, 
+.media-card video {
+    width: 100%;
+    height: 120px; /* Уменьшили с 200px */
+    object-fit: cover;
+}
+
+.video-card video {
+    background: #000;
+}
+
+.media-name {
+    padding: 6px; /* Уменьшили с 10px */
+    font-size: 0.7rem; /* Уменьшили с 0.8rem */
+}
+
+/* Запасной вариант для битых изображений */
+img[src$="placeholder-image.png"] {
+    background: var(--color-accent-light);
+    padding: 20px;
+    object-fit: contain !important;
+}
+.media-error-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent-light);
+    border-radius: var(--radius-sm);
+}
+
+.media-error {
+    text-align: center;
+    padding: var(--space-md);
+}
+
+.error-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.error-text {
+    color: var(--color-gray);
+    margin-bottom: var(--space-sm);
+}
+
+.error-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+/* Добавьте в конец файла dnevnik.css */
+
+/* Стили для полноэкранного просмотра */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fullscreen-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.fullscreen-content img,
+.fullscreen-content video {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.fullscreen-content video {
+    background: #000;
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Отключаем стандартное поведение видео */
+.media-card video {
+    pointer-events: none;
+}
+
+/* Но разрешаем клики на всей карточке */
+.media-card {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Псевдоэлемент для перехвата кликов */
+.media-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+/* Lazy loading styles */
+.lazy-media {
+    background: var(--color-accent-light);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+}
+
+/* Timeline styles */
+.timeline-container {
+    margin-bottom: 2.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Заголовок */
+.timeline-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-warm-2);
+}
+
+.timeline-title {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+}
+.timeline-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+/* Месяц */
+.timeline-month-section {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-month-header {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-month-header::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+/* Посты */
+.timeline-month-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.75rem;
+    margin-left: 1.8rem;
+}
+.timeline-years {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-primary);
+}
+
+.timeline-year {
+    display: flex;
+    gap: 1rem;
+}
+.year-label {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--color-secondary);
+    width: 3.5rem;
+    flex-shrink: 0;
+}
+.year-posts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.timeline-year::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid var(--color-light);
+}
+
+.timeline-month {
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.timeline-month-header {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-sm);
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline-month-header::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+}
+
+.timeline-post {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeline-post:hover {
+    background: var(--color-accent-light);
+}
+.post-date {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    min-width: 3.2rem;
+}
+.post-day {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 1.8rem;
+    text-align: center;
+}
+.post-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.timeline-more {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+}
+/* Полоса прокрутки */
+.timeline-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+    background: var(--color-warm-2);
+    border-radius: 3px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .timeline-month-posts {
+        grid-template-columns: 1fr;
+    }
+    
+    .year-label {
+        width: 100%;
+        padding-bottom: 0.3rem;
+        border-bottom: 1px dashed var(--color-warm-2);
+    }
+    
+    .post-title {
+        max-width: 150px;
+    }
+    .timeline-container {
+        padding: 1rem;
+}
+}
+/* Highlight effect for scrolled posts */
+.diary-post.highlight {
+    animation: highlightPost 2s ease;
+}
+
+@keyframes highlightPost {
+    0% { background: transparent; }
+    20% { background: var(--color-accent-light); }
+    100% { background: transparent; }
+}
+/* Добавьте в dnevnik.css */
+.media-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    background: var(--color-accent-light);
+}
+
+.media-card video {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: var(--color-accent-light);
+}
+
+.lazy-media {
+    background: var(--color-accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+}

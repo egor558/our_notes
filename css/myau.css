@@ -1,0 +1,285 @@
+/* Стили для страницы Мяу */
+.myau-section {
+    padding: var(--space-xxl) 0;
+}
+
+.myau-form {
+    max-width: 600px;
+    margin: 0 auto var(--space-xxl);
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    font-family: var(--font-primary);
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-warm-2);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.file-limits {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    margin-bottom: var(--space-sm);
+    text-align: right;
+}
+
+.file-limits span {
+    background-color: var(--color-accent-light);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.media-upload {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+/* Стили для уведомлений */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-family: var(--font-primary);
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.notification.success {
+    background-color: #4CAF50;
+}
+
+.notification.error {
+    background-color: #F44336;
+}
+
+.notification.fade-out {
+    opacity: 0;
+}
+
+.upload-option {
+    flex: 1;
+}
+
+.upload-btn {
+    display: block;
+    padding: var(--space-md);
+    background-color: var(--color-accent-light);
+    border: 2px dashed var(--color-warm-1);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: var(--color-warm-2);
+    border-color: var(--color-primary);
+}
+
+.upload-btn span {
+    font-size: 1.2rem;
+}
+
+.media-preview {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Было 150px */
+    gap: 10px; /* Было var(--space-md) */
+}
+
+.media-item {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.media-item img, .media-item video {
+    max-height: 120px; /* Уменьшили высоту */
+}
+
+.delete-media {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.myau-posts {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.myau-post {
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.post-title {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.post-media {
+    margin: var(--space-md) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+/* Стили для прогресс-бара */
+.progress-container {
+    margin: var(--space-lg) 0;
+    width: 100%;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--color-warm-2);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+}
+
+/* Обновленные стили для медиа */
+.media-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: var(--space-md);
+}
+
+.media-item {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    height: 120px;
+}
+
+.media-item img, 
+.media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.delete-media {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+}
+
+.delete-media:hover {
+    background-color: rgba(255,0,0,0.7);
+}
+/* Стили для эмоций */
+.rating-emojis {
+    margin-top: var(--space-md);
+}
+
+.emojis-container {
+    display: flex;
+    gap: 8px;
+}
+
+.emojis-container input {
+    display: none;
+}
+
+.emojis-container label {
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    opacity: 0.7;
+}
+
+.emojis-container label:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.emojis-container input:checked + label {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+.mood-emoji {
+    font-size: 1.5rem;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+#cancel-upload {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cancel-upload:hover {
+    background-color: #D32F2F;
+}

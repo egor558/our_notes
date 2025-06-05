@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Что новае?</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/myau.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">Вайбик двух котов</a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link active">Главная</a></li>
+                        <li class="nav__item"><a href="dnevnik.html" class="nav__link">Дневник</a></li>
+                        <li class="nav__item"><a href="myau.html" class="nav__link">Мяу</a></li>
+                    </ul>
+                </nav>
+                <button class="burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="myau-section">
+            <div class="container">
+                <h1 class="section-title">Что новае?</h1>
+                
+                <form id="myau-form" class="myau-form">
+                    <div class="form-group">
+                        <label for="myau-title">Заголовок</label>
+                        <input type="text" id="myau-title" placeholder="мяу?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="myau-description">Описание</label>
+                        <textarea id="myau-description" rows="4" placeholder="Напиши что-та интереснае"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <!-- Добавьте этот div перед блоком с медиа в форме -->
+<!-- В разделе формы добавьте вместо звезд этот блок -->
+<div class="form-group">
+    <label>Какое у тебя настроение?</label>
+    <div class="rating-emojis">
+        <div class="emojis-container">
+            <input type="radio" id="emoji-5" name="rating" value="5">
+            <label for="emoji-5" title="Отлично">😊</label>
+            <input type="radio" id="emoji-4" name="rating" value="4">
+            <label for="emoji-4" title="Хорошо">🙂</label>
+            <input type="radio" id="emoji-3" name="rating" value="3">
+            <label for="emoji-3" title="Нормально">😐</label>
+            <input type="radio" id="emoji-2" name="rating" value="2">
+            <label for="emoji-2" title="Плохо">😕</label>
+            <input type="radio" id="emoji-1" name="rating" value="1">
+            <label for="emoji-1" title="Ужасно">😢</label>
+        </div>
+        <div class="rating-text"><i>Выбери свое настроение</i></div>
+    </div>
+</div>
+    <label>Добавь медиа</label>
+    <div class="file-limits">
+        <span>Макс. размер: 350MB (фото/видео)</span>
+    </div>
+                      <div class="media-upload">
+    <div class="upload-option">
+        <input type="file" id="image-upload" accept="image/*" multiple hidden>
+        <label for="image-upload" class="upload-btn">
+            <span>📷 Фото </span>
+        </label>
+    </div>
+    <div class="upload-option">
+        <input type="file" id="video-upload" accept="video/*" multiple hidden>
+        <label for="video-upload" class="upload-btn">
+            <span>🎥 Видео </span>
+        </label>
+    </div>
+</div>
+                        <div id="media-preview" class="media-preview"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary">Опубликовать</button>
+                </form>
+                
+                <div id="myau-posts" class="myau-posts">
+                    <!-- Здесь будут появляться опубликованные посты -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col">
+                    <a href="/" class="logo">Вайбик двух котов</a>
+                    <p class="footer__text">© 2025 Все права защищены</p>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="https://workspace.google.com/intl/ru/gmail/">rekeevegor066@gmail.com</a></li>
+                        <li><a href="https://mail.ru/">arina.gureva.07@mail.ru</a></li>
+                        <li><a href="tel:+79061309104">+7 (906) 130-9104</a></li>
+                        <li><a href="tel:+79199726778">+7 (919) 972-6778</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Соцсети</h4>
+                    <div class="social-links">
+                        <a href="https://T.me/The_Ghost_in_reality" class="social-link">Telegram</a>
+                        <a href="https://www.tiktok.com/@painfulkitty?_t=ZS-8wuS9eCfl2W&_r=1" class="social-link">Tik Tok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/config.js"></script>
+    <script src="js/myau.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
